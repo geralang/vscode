@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"> <dict>
+    <key>fileTypes</key> <array> 
+        <string>gera</string>
+  	</array>
+	<key>name</key> <string>gera</string>
+  	<key>patterns</key> <array> 
+    	<dict>
+      		<key>include</key> <string>#main</string>
+    	</dict>
+   	</array>
+	<key>scopeName</key> <string>source.gera</string>
+  	<key>uuid</key> <string>8f285c78-2801-11ee-be56-0242ac120002</string>
+  	<key>repository</key> <dict>
+    	<key>main</key> <dict>
+      		<key>patterns</key> <array> 
+	
+				<!-- procedure declarations -->
+				<dict>
+					<key>begin</key> <string>(proc)\s+([a-zA-Z_][a-zA-Z0-9_]*)(\()</string>
+          			<key>beginCaptures</key> <dict>
+            			<key>1</key> <dict>
+							<key>name</key> <string>keyword.control.gera</string>
+						</dict>
+            			<key>2</key> <dict>
+              				<key>name</key> <string>entity.name.function.gera</string>
+            			</dict>
+						<key>3</key> <dict>
+              				<key>name</key> <string>punctuation.brackets.gera</string>
+            			</dict>
+          			</dict>
+          			<key>patterns</key> <array> 
+            			<dict>
+          					<key>match</key> <string>([a-zA-Z_][a-zA-Z0-9_]*)\s*(?:(,)|(?=\)))</string>
+          					<key>captures</key> <dict>
+            					<key>1</key> <dict>
+              						<key>name</key> <string>variable.other.local.gera</string>
+            					</dict>
+								<key>2</key> <dict>
+              						<key>name</key> <string>punctuation.separator.delimiter.gera</string>
+            					</dict>
+          					</dict>
+        				</dict>
+           			</array>
+          			<key>end</key> <string>(\))</string>
+          			<key>endCaptures</key> <dict>
+            			<key>1</key> <dict>
+              				<key>name</key> <string>punctuation.brackets.gera</string>
+            			</dict>
+          			</dict>
+        		</dict>
+
+				<!-- calls -->
+				<dict>
+          			<key>match</key> <string>\b([a-zA-Z_][a-zA-Z0-9_]*)\s*(\()</string>
+          			<key>captures</key> <dict>
+						<key>1</key> <dict>
+							<key>name</key> <string>entity.name.function.gera</string>
+						</dict>
+            			<key>2</key> <dict>
+              				<key>name</key> <string>punctuation.brackets.gera</string>
+            			</dict>
+          			</dict>
+        		</dict>
+
+				<!-- variable declarations -->
+				<dict>
+          			<key>match</key> <string>\b(var)\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*(=)</string>
+          			<key>captures</key> <dict>
+						<key>1</key> <dict>
+							<key>name</key> <string>keyword.control.gera</string>
+						</dict>
+            			<key>2</key> <dict>
+              				<key>name</key> <string>variable.other.local.gera</string>
+            			</dict>
+						<key>3</key> <dict>
+              				<key>name</key> <string>keyword.operator.gera</string>
+            			</dict>
+          			</dict>
+        		</dict>
+
+				<!-- tags -->
+				<dict>
+          			<key>match</key> <string>(\#[a-zA-Z_][a-zA-Z0-9_]*)\b</string>
+          			<key>name</key> <string>entity.name.type.gera</string>
+        		</dict>
+
+				<!-- keyword -->
+        		<dict>
+          			<key>match</key> <string>\b(proc|case|var|mut|return|mod|pub|use|else)\b</string>
+          			<key>name</key> <string>keyword.control.gera</string>
+        		</dict>
+
+				<!-- constant -->
+				<dict>
+          			<key>match</key> <string>\b(true|false|unit)\b</string>
+          			<key>name</key> <string>constant.language.gera</string>
+        		</dict>
+
+				<!-- number literal -->
+				<dict>
+          			<key>match</key> <string>(([0-9]*[.])?[0-9]+)</string>
+          			<key>name</key> <string>constant.numeric.gera</string>
+        		</dict>
+
+				<!-- operators -->
+        		<dict>
+          			<key>match</key> <string>(\||\=|\.|\+|\-|\*|\/|\%|\<|\>|\!|\&\&|\:\:)</string>
+          			<key>name</key> <string>keyword.operator.gera</string>
+        		</dict>
+
+				<!-- parentheses -->
+        		<dict>
+          			<key>begin</key> <string>(\()</string>
+          			<key>beginCaptures</key> <dict>
+            			<key>1</key> <dict>
+              				<key>name</key> <string>punctuation.brackets.gera</string>
+            			</dict>
+          			</dict>
+          			<key>patterns</key> <array> 
+            			<dict>
+              				<key>include</key> <string>#main__1</string>
+            			</dict>
+          	 		</array>
+          			<key>end</key> <string>(\))</string>
+          			<key>endCaptures</key> <dict>
+            			<key>1</key> <dict>
+              				<key>name</key>
+              				<string>punctuation.brackets.gera</string>
+            			</dict>
+          			</dict>
+        		</dict>
+
+				<!-- string literals -->
+        		<dict>
+					<key>begin</key> <string>(\&quot;)</string>
+          			<key>beginCaptures</key> <dict>
+            			<key>1</key> <dict>
+              				<key>name</key> <string>string.punctuation.gera</string>
+            			</dict>
+          			</dict>
+          			<key>patterns</key> <array> 
+            			<dict>
+          					<key>match</key> <string>([^\&quot;]+)</string>
+          					<key>name</key> <string>string.text.gera</string>
+        				</dict>
+           			</array>
+          			<key>end</key> <string>(\&quot;)</string>
+          			<key>endCaptures</key> <dict>
+            			<key>1</key> <dict>
+              				<key>name</key> <string>string.punctuation.gera</string>
+            			</dict>
+          			</dict>
+        		</dict>
+
+				<!-- comments -->
+				<dict>
+          			<key>match</key> <string>(//.*)</string>
+          			<key>name</key> <string>comment.gera</string>
+        		</dict>
+
+				<!-- identifiers -->
+				<dict>
+          			<key>match</key> <string>([a-zA-Z][a-zA-Z0-9]*)</string>
+          			<key>name</key> <string>other.gera</string>
+        		</dict>
+				
+       		</array>
+    	</dict>
+    	<key>main__1</key> <dict>
+      		<key>patterns</key> <array> 
+        		<dict>
+          			<key>include</key> <string>#main</string>
+        		</dict>
+       		</array>
+    	</dict>
+  	</dict>
+</dict>
+</plist>

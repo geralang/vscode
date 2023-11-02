@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"> <dict>
+    <key>fileTypes</key> <array> 
+        <string>gem</string>
+  	</array>
+	<key>name</key> <string>gem</string>
+  	<key>patterns</key> <array> 
+		<dict>
+			<key>include</key> <string>#types</string>
+		</dict>
+    	<dict>
+      		<key>include</key> <string>#main</string>
+    	</dict>
+   	</array>
+	<key>scopeName</key> <string>source.gem</string>
+  	<key>uuid</key> <string>51fd0fba-7996-11ee-b962-0242ac120002</string>
+  	<key>repository</key> <dict>
+		<key>types</key> <dict>
+			<key>patterns</key> <array> 
+
+				<!-- simple types -->
+				<dict>
+          			<key>match</key> <string>\b(unit|bool|int|float|str)\b</string>
+          			<key>name</key> <string>entity.name.type.gem</string>
+        		</dict>
+
+			</array>
+		</dict>
+    	<key>main</key> <dict>
+      		<key>patterns</key> <array> 
+
+				<!-- keyword -->
+        		<dict>
+          			<key>match</key> <string>\b(proc|var|type)\b</string>
+          			<key>name</key> <string>keyword.control.gem</string>
+        		</dict>
+
+				<!-- operators -->
+        		<dict>
+          			<key>match</key> <string>(\-\>|\:\:)</string>
+          			<key>name</key> <string>keyword.operator.gera</string>
+        		</dict>
+
+				<!-- comments -->
+				<dict>
+          			<key>match</key> <string>(//.*)</string>
+          			<key>name</key> <string>comment.gem</string>
+        		</dict>
+
+				<!-- identifiers -->
+				<dict>
+          			<key>match</key> <string>([a-zA-Z][a-zA-Z0-9]*)</string>
+          			<key>name</key> <string>other.gem</string>
+        		</dict>
+				
+       		</array>
+    	</dict>
+  	</dict>
+</dict>
+</plist>
