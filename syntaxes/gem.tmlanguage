@@ -30,6 +30,12 @@
     	<key>main</key> <dict>
       		<key>patterns</key> <array> 
 
+				<!-- comments -->
+				<dict>
+          			<key>match</key> <string>(//.*)</string>
+          			<key>name</key> <string>comment.gem</string>
+        		</dict>
+
 				<!-- keyword -->
         		<dict>
           			<key>match</key> <string>\b(proc|var|type)\b</string>
@@ -40,12 +46,6 @@
         		<dict>
           			<key>match</key> <string>(\-\>|\:\:)</string>
           			<key>name</key> <string>keyword.operator.gera</string>
-        		</dict>
-
-				<!-- comments -->
-				<dict>
-          			<key>match</key> <string>(//.*)</string>
-          			<key>name</key> <string>comment.gem</string>
         		</dict>
 
 				<!-- identifiers -->

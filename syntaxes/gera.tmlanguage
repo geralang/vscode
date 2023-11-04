@@ -16,6 +16,12 @@
     	<key>main</key> <dict>
       		<key>patterns</key> <array> 
 	
+				<!-- comments -->
+				<dict>
+          			<key>match</key> <string>(//.*)</string>
+          			<key>name</key> <string>comment.gera</string>
+        		</dict>
+
 				<!-- procedure declarations -->
 				<dict>
 					<key>begin</key> <string>(proc)\s+([a-zA-Z_][a-zA-Z0-9_]*)(\()</string>
@@ -152,12 +158,6 @@
               				<key>name</key> <string>string.punctuation.gera</string>
             			</dict>
           			</dict>
-        		</dict>
-
-				<!-- comments -->
-				<dict>
-          			<key>match</key> <string>(//.*)</string>
-          			<key>name</key> <string>comment.gera</string>
         		</dict>
 
 				<!-- identifiers -->
