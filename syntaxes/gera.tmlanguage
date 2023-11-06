@@ -104,9 +104,15 @@
           			<key>name</key> <string>constant.language.gera</string>
         		</dict>
 
+				<!-- range operators -->
+				<dict>
+          			<key>match</key> <string>(\.\.|\.\.\=)</string>
+          			<key>name</key> <string>keyword.operator.gera</string>
+        		</dict>
+
 				<!-- number literal -->
 				<dict>
-          			<key>match</key> <string>(([0-9]*[.])?[0-9]+)</string>
+          			<key>match</key> <string>(([0-9]*\.)?[0-9]+)</string>
           			<key>name</key> <string>constant.numeric.gera</string>
         		</dict>
 
