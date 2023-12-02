@@ -30,7 +30,7 @@
 
 				<!-- keyword -->
         		<dict>
-          			<key>match</key> <string>\b(proc|case|var|mut|return|mod|pub|use|else|const)\b</string>
+          			<key>match</key> <string>\b(proc|case|var|mut|return|mod|pub|use|else|static)\b</string>
           			<key>name</key> <string>keyword.control.gera</string>
         		</dict>
 
