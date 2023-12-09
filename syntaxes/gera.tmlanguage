@@ -154,7 +154,7 @@
           			</dict>
           			<key>patterns</key> <array> 
             			<dict>
-          					<key>match</key> <string>(\\[nr\&quot;])</string>
+          					<key>match</key> <string>(\\[nr\&quot;\\])</string>
           					<key>name</key> <string>constant.character.escape.gera</string>
         				</dict>
 						<dict>
@@ -162,7 +162,7 @@
           					<key>name</key> <string>string.text.gera</string>
         				</dict>
            			</array>
-          			<key>end</key> <string>(?<!\\)(\&quot;)</string>
+          			<key>end</key> <string>(?<!(?<!\\)\\)(\&quot;)</string>
           			<key>endCaptures</key> <dict>
             			<key>1</key> <dict>
               				<key>name</key> <string>string.punctuation.gera</string>
