@@ -153,8 +153,12 @@
             			</dict>
           			</dict>
           			<key>patterns</key> <array> 
+						<dict>
+          					<key>match</key> <string>(\\x[a-fA-F0-9]{2})</string>
+          					<key>name</key> <string>constant.character.escape.gera</string>
+        				</dict>
             			<dict>
-          					<key>match</key> <string>(\\[nr\&quot;\\])</string>
+          					<key>match</key> <string>(\\.)</string>
           					<key>name</key> <string>constant.character.escape.gera</string>
         				</dict>
 						<dict>
