@@ -118,7 +118,7 @@
 
 				<!-- operators -->
         		<dict>
-          			<key>match</key> <string>(\||\=|\.|\+|\-|\*|\/|\%|\<|\>|\!|\&\&|\:)</string>
+          			<key>match</key> <string>(\||\=|\.|\+|\-|\*|\/|\%|\<|\>|\!|\&\&|\:\:)</string>
           			<key>name</key> <string>keyword.operator.gera</string>
         		</dict>
 
