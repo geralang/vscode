@@ -24,13 +24,20 @@
 
 				<!-- tags -->
 				<dict>
-          			<key>match</key> <string>(\#[a-zA-Z_][a-zA-Z0-9_]*)\b</string>
-          			<key>name</key> <string>entity.name.label.gera</string>
+          			<key>match</key> <string>(\?|\#)([a-zA-Z_][a-zA-Z0-9_]*)\b</string>
+          			<key>captures</key> <dict>
+						<key>1</key> <dict>
+							<key>name</key> <string>keyword.operator.gera</string>
+						</dict>
+            			<key>2</key> <dict>
+              				<key>name</key> <string>entity.name.label.gera</string>
+            			</dict>
+          			</dict>
         		</dict>
 
 				<!-- keyword -->
         		<dict>
-          			<key>match</key> <string>\b(proc|case|var|mut|return|mod|pub|use|else|static|target)\b</string>
+          			<key>match</key> <string>\b(proc|case|val|mut|return|mod|pub|use|else|static|target)\b</string>
           			<key>name</key> <string>keyword.control.gera</string>
         		</dict>
 
@@ -56,13 +63,10 @@
           			</dict>
           			<key>patterns</key> <array> 
             			<dict>
-          					<key>match</key> <string>([a-zA-Z_][a-zA-Z0-9_]*)\s*(?:(,)|(?=\)))</string>
+          					<key>match</key> <string>([a-zA-Z_][a-zA-Z0-9_]*)</string>
           					<key>captures</key> <dict>
             					<key>1</key> <dict>
-              						<key>name</key> <string>variable.other.local.gera</string>
-            					</dict>
-								<key>2</key> <dict>
-              						<key>name</key> <string>punctuation.separator.delimiter.gera</string>
+              						<key>name</key> <string>variable.parameter.gera</string>
             					</dict>
           					</dict>
         				</dict>
@@ -96,7 +100,7 @@
 							<key>name</key> <string>keyword.control.gera</string>
 						</dict>
             			<key>2</key> <dict>
-              				<key>name</key> <string>variable.other.local.gera</string>
+              				<key>name</key> <string>variable.local.gera</string>
             			</dict>
 						<key>3</key> <dict>
               				<key>name</key> <string>keyword.operator.gera</string>
@@ -118,7 +122,7 @@
 
 				<!-- operators -->
         		<dict>
-          			<key>match</key> <string>(\||\=|\.|\+|\-|\*|\/|\%|\<|\>|\!|\&\&|\:\:)</string>
+					<key>match</key> <string>(\=|\+|\-|\*|\/|\%|\<|\>|\!|\&\&|\||\.|\:)</string>
           			<key>name</key> <string>keyword.operator.gera</string>
         		</dict>
 
@@ -176,8 +180,8 @@
 
 				<!-- identifiers -->
 				<dict>
-          			<key>match</key> <string>([a-zA-Z][a-zA-Z0-9]*)</string>
-          			<key>name</key> <string>other.gera</string>
+          			<key>match</key> <string>([a-zA-Z_][a-zA-Z0-9_]*)(?![a-zA-Z0-9_]*?\:\:)</string>
+          			<key>name</key> <string>variable.other.gera</string>
         		</dict>
 				
        		</array>
