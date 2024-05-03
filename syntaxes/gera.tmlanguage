@@ -24,7 +24,7 @@
 
 				<!-- tags -->
 				<dict>
-          			<key>match</key> <string>(\?|\#)([a-zA-Z_][a-zA-Z0-9_]*)\b</string>
+          			<key>match</key> <string>(\?|\#)\s*([a-zA-Z_][a-zA-Z0-9_]*)\b</string>
           			<key>captures</key> <dict>
 						<key>1</key> <dict>
 							<key>name</key> <string>keyword.operator.gera</string>
