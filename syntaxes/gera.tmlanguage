@@ -37,8 +37,12 @@
 
 				<!-- keyword -->
         		<dict>
-          			<key>match</key> <string>\b(proc|case|val|mut|return|mod|pub|use|else|static|target)\b</string>
+          			<key>match</key> <string>\b(case|return|else|static)\b</string>
           			<key>name</key> <string>keyword.control.gera</string>
+        		</dict>
+				<dict>
+          			<key>match</key> <string>\b(proc|val|mut|mod|pub|use|target)\b</string>
+          			<key>name</key> <string>storage.modifier.gera</string>
         		</dict>
 
 				<!-- constant -->
@@ -183,6 +187,16 @@
           			<key>match</key> <string>([a-zA-Z_][a-zA-Z0-9_]*)(?![a-zA-Z0-9_]*?\:\:)</string>
           			<key>name</key> <string>variable.other.gera</string>
         		</dict>
+
+				<!-- remaining punctuation -->
+				<dict>
+					<key>match</key> <string>(\(|\)|\[|\]|\{|\})</string>
+					<key>name</key> <string>punctuation.brackets.gera</string>
+				</dict>
+				<dict>
+					<key>match</key> <string>(,)</string>
+					<key>name</key> <string>punctuation.separator.gera</string>
+				</dict>
 				
        		</array>
     	</dict>
